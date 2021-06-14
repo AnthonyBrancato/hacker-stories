@@ -1,5 +1,6 @@
-import { Item } from 'components'
+import { Item } from "components";
 
-const List = ({ list }) => list.map(item => <Item key={item.objectID} {...item} />)
+const List = ({ list }) =>
+  list.map((item) => <Item key={item.objectID} {...item} />);
 
-export default List
+export default List;

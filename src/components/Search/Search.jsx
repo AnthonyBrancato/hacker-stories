@@ -1,13 +1,35 @@
-import React from 'react'
+import React from "react";
 
-const Search = props => {
+const Search = ({
+  type = "text",
+  id,
+  onInputChange,
+  value,
+  children,
+  isFocused,
+}) => {
+  const inputRef = React.useRef();
 
-  return(
+  React.useEffect(() => {
+    if(isFocused && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isFocused])
+
+  return (
     <>
-      <label htmlFor="search">Search: </label>
-      <input type="text" id="search" onChange={props.onSearch} value={props.search} />
+      <label htmlFor={id}>{children}</label>
+      &nbsp;
+      <input
+        type={type}
+        id={id}
+        onChange={onInputChange}
+        value={value}
+        autoFocus={isFocused}
+        ref={inputRef}
+      />
     </>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

@@ -1,5 +1,5 @@
 const Item = ({ url, title, author, num_comments, points }) => {
-  return(
+  return (
     <div>
       <span>
         <a href={url}>{title}</a>
@@ -8,7 +8,7 @@ const Item = ({ url, title, author, num_comments, points }) => {
       <span>{num_comments}</span>
       <span>{points}</span>
     </div>
-  )
-}
+  );
+};
 
-export default Item
+export default Item;
