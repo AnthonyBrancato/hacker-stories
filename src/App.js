@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { List, Search } from 'components'
+import { useSemiPersistentState } from 'hooks'
 
 import './App.css';
 
@@ -26,14 +27,8 @@ const App = () => {
     }
   ]
 
-  const [searchTerm, setSearchTerm] = React.useState(
-    localStorage.getItem('search') || 'React'
-  )
-
-  React.useEffect(() => {
-    console.log("hey")
-    localStorage.setItem('search', searchTerm)
-  }, [searchTerm])
+  const [searchTerm, setSearchTerm] = useSemiPersistentState('search', 'react')
+  
   
   const handleSearch = event => {
     setSearchTerm(event.target.value)
