@@ -31,6 +31,7 @@ const App = () => {
   )
 
   React.useEffect(() => {
+    console.log("hey")
     localStorage.setItem('search', searchTerm)
   }, [searchTerm])
   
