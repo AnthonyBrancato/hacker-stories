@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({
+const InputWithLabel = ({
   type = "text",
   id,
   onInputChange,
@@ -32,4 +32,4 @@ const Search = ({
   );
 };
 
-export default Search;
+export default InputWithLabel;
